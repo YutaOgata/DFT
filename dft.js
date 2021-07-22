@@ -7,8 +7,8 @@ class dft {
     var r = 100;
     var T = 600;
     
-    vc1 = elm1;
-    ctx1 = vc1.getContext('2d');
+    var vc1 = elm1;
+    var ctx1 = vc1.getContext('2d');
     
     ctx1.strokeStyle ='red';
     ctx1.lineWidth = 2;
