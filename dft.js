@@ -19,8 +19,12 @@ function draw(){
       ctx.lineTo(x, y+(canvas.height/2));
     }
   ctx.stroke();
+  ctx.strokeStyle = 'black';
   ctx.moveTo(0,0);
-  ctx.lineTo(400,400);
+  ctx.lineTo(0,500);
+  ctx.stroke();
+  ctx.moveTo(0,250);
+  ctx.lineTo(600,250);
   ctx.stroke();
   
   
