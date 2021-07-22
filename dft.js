@@ -15,9 +15,9 @@ class dft {
     ctx1.beginPath();
     ctx1.moveTo(0,250); //始点
  
-    for(var x=1; x<=canvas.width; x +=1) {
+    for(var x=1; x<=elm1.width; x +=1) {
        var y =-r*Math.sin((2*Math.PI/T)*x*2); //振幅 * Math.sin( 角速度(2π/周期)*時間 )
-       ctx1.lineTo(x, y+(canvas.height/2));
+       ctx1.lineTo(x, y+(elm1.height/2));
      }
   
     ctx1.stroke();
