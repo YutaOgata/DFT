@@ -11,7 +11,10 @@ function draw(){
   ctx.strokeStyle ='red';
   ctx.lineWidth = 2;
   ctx.beginPath();
+  ctx.moveTo(0,0);
+  ctx.lineTo(400,400);
   ctx.moveTo(0,250); //始点
+  
  
   for(var x=1; x<=canvas.width; x +=1) {
       var y =-r*Math.sin((2*Math.PI/T)*x*2); //振幅 * Math.sin( 角速度(2π/周期)*時間 )
