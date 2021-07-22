@@ -31,8 +31,8 @@ class dft {
         }
     }
     for(let i=0; i<this.sample; i++){
-      vc1.moveTo(x_pt[i],y_pt[i]);
-      vc1.lineTo(x_pt[i] + 1, y_pt[i] + 1);
+      vc1.moveTo(x_pt[i],0);
+      vc1.lineTo(x_pt[i] ,this.canvas1.height);
     }
     vc1.stroke();
   }
