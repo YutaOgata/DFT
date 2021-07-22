@@ -4,36 +4,8 @@ class dft {
     this.elm1 = elm1;
     this.elm2 = elm2;
     this.elm3 = elm3;
-    var r = 100;
-    var T = 600;
-    
-    var vc1 = elm1;
-    var ctx1 = vc1.getContext('2d');
-    
-    ctx1.strokeStyle ='red';
-    ctx1.lineWidth = 2;
-    ctx1.beginPath();
-    ctx1.moveTo(0,250); //始点
- 
-    for(var x=1; x<=elm1.width; x +=1) {
-       var y =-r*Math.sin((2*Math.PI/T)*x*2); //振幅 * Math.sin( 角速度(2π/周期)*時間 )
-       ctx1.lineTo(x, y+(elm1.height/2));
-     }
-  
-    ctx1.stroke();
   }
 }
-
-window.addEventListener("load", function(e) {
-
-  var X = new dft(
-    document.querySlector('#canvas1'),
-    document.querySlector('#canvas2'),
-    document.querySlector('#result'),
-   );
-
-});
-/**
 window.addEventListener('load',draw,false);
 
 function draw(){
@@ -54,5 +26,10 @@ function draw(){
     }
   
   ctx.stroke();
+  
+  var ui = new dft(
+    document.querySelector("#canvas1"),
+    document.querySelector("#canvas2"),
+    document.querySelector("#result"),
 }
-**/
+
