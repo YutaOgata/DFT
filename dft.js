@@ -31,7 +31,7 @@ function draw(){
   var canvas = document.getElementById('canvas');
   var ctx = canvas.getContext('2d');
     
-  ctx.strokeStyle ='green';
+  ctx.strokeStyle ='red';
   ctx.lineWidth = 2;
   ctx.beginPath();
   ctx.moveTo(0,250); //始点
