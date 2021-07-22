@@ -13,6 +13,7 @@ function draw(){
   ctx.beginPath();
   ctx.moveTo(0,0);
   ctx.lineTo(400,400);
+  ctx.stroke();
   ctx.moveTo(0,250); //始点
   
  
