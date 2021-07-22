@@ -1,11 +1,4 @@
-class dft {
-  
-  constructor( elm1, elm2, elm3 ) {
-    this.elm1 = elm1;
-    this.elm2 = elm2;
-    this.elm3 = elm3;
-  }
-}
+
 window.addEventListener('load',draw,false);
 
 function draw(){
@@ -26,10 +19,5 @@ function draw(){
     }
   
   ctx.stroke();
-  
-  var ui = new dft(
-    document.querySelector("#canvas1"),
-    document.querySelector("#canvas2"),
-    document.querySelector("#result"),
 }
 
