@@ -6,7 +6,7 @@ function draw(){
   var T = 600;
   
   var canvas = document.querySlector('#canvas1');
-  var ctx = canvas.getContext('2d');
+  var ctx = canvas1.getContext('2d');
     
   ctx.strokeStyle ='red';
   ctx.lineWidth = 2;
