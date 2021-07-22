@@ -11,9 +11,6 @@ function draw(){
   ctx.strokeStyle ='red';
   ctx.lineWidth = 2;
   ctx.beginPath();
-  ctx.moveTo(0,0);
-  ctx.lineTo(400,400);
-  ctx.stroke();
   ctx.moveTo(0,250); //始点
   
  
@@ -21,7 +18,11 @@ function draw(){
       var y =-r*Math.sin((2*Math.PI/T)*x*2); //振幅 * Math.sin( 角速度(2π/周期)*時間 )
       ctx.lineTo(x, y+(canvas.height/2));
     }
-  
   ctx.stroke();
+  ctx.moveTo(0,0);
+  ctx.lineTo(400,400);
+  ctx.stroke();
+  
+  
 }
 
