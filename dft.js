@@ -4,6 +4,8 @@ class dft {
     this.elm1 = elm1;
     this.elm2 = elm2;
     this.elm3 = elm3;
+    var r = 100;
+    var T = 600;
     
     vc1 = elm1;
     ctx1 = vc1.getContext('2d');
@@ -24,7 +26,7 @@ class dft {
 
 window.addEventListener("load", function(e) {
 
-  var x = new dft(
+  var X = new dft(
     document.querySlector('#canvas1'),
     document.querySlector('#canvas2'),
     document.querySlector('#result'),
