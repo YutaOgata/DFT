@@ -9,19 +9,21 @@ class dft {
     
     var vc1 = this.canvas1.getContext('2d');
     var r = 100;
-    var T = canvas1.width;
+    var T = this.canvas1.width;
+    var x_pt = new Array(20);
+    var y_pt = new Array(20);
     vc1.strokeStyle ='blue';
     vc1.lineWidth = 2;
     vc1.beginPath();
     vc1.moveTo(0,0);
-    vc1.lineTo(0,500);
-    vc1.moveTo(0,250);
-    vc1.lineTo(600,250);
+    vc1.lineTo(0,this.canvas1.height);
+    vc1.moveTo(0,this.canvas1.height/2);
+    vc1.lineTo(this.canvas1.width,this.canvas1.height/2);
     
     vc1.moveTo(0,250); //始点
-    for(var x=1; x<=canvas1.width; x +=1) {
-        var y =-r*Math.sin((2*Math.PI/T)*x*2); //振幅 * Math.sin( 角速度(2π/周期)*時間 )
-        vc1.lineTo(x, y+(canvas1.height/2));
+    for(var x=1; x<=this.canvas1.width; x +=1) {
+        var y =-r*Math.sin((2*Math.PI/T)*x*this.freq); //振幅 * Math.sin( 角速度(2π/周期)*時間*freq )
+        vc1.lineTo(x, y+(this.canvas1.height/2));
     }
     vc1.stroke();
   }
