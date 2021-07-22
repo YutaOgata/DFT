@@ -12,6 +12,7 @@ class dft {
     var T = this.canvas1.width;
     var x_pt = new Array(20);
     var y_pt = new Array(20);
+    var pt = canvas1.width / this.sample;
     vc1.strokeStyle ='blue';
     vc1.lineWidth = 2;
     vc1.beginPath();
@@ -21,9 +22,17 @@ class dft {
     vc1.lineTo(this.canvas1.width,this.canvas1.height/2);
     
     vc1.moveTo(0,250); //始点
-    for(var x=1; x<=this.canvas1.width; x +=1) {
+    for(var x=0; x<this.canvas1.width; x +=1) {
         var y =-r*Math.sin((2*Math.PI/T)*x*this.freq); //振幅 * Math.sin( 角速度(2π/周期)*時間*freq )
         vc1.lineTo(x, y+(this.canvas1.height/2));
+        if(x % pt == 0 && x != canvas1.width){
+          x_pt.push(x);
+          y_pt.push(y);
+        }
+    }
+    for(let i=0; i<this.sample; i++){
+      vc1.moveTo(x_pt[i],y_pt[i]);
+      vc1.lineTo(x_pt[i] + 1, y_pt[i] + 1);
     }
     vc1.stroke();
   }
