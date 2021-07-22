@@ -9,7 +9,7 @@ class dft {
     
     var vc1 = this.canvas1.getContext('2d');
     var r = 100;
-    var T = canvas1.height;
+    var T = canvas1.width;
     vc1.strokeStyle ='blue';
     vc1.lineWidth = 2;
     vc1.beginPath();
