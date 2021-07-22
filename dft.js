@@ -5,7 +5,7 @@ function draw(){
   var r = 100;
   var T = 600;
   
-  var canvas = document.getElementById('canvas');
+  var canvas = document.querySlector('#canvas');
   var ctx = canvas.getContext('2d');
     
   ctx.strokeStyle ='red';
