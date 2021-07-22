@@ -37,7 +37,7 @@ function draw(){
   ctx.moveTo(0,250); //始点
  
   for(var x=1; x<=canvas.width; x +=1) {
-      var y =-r*Math.sin((2*Math.PI/T)*x); //振幅 * Math.sin( 角速度(2π/周期)*時間 )
+      var y =-r*Math.sin((2*Math.PI/T)*x*2); //振幅 * Math.sin( 角速度(2π/周期)*時間 )
       ctx.lineTo(x, y+(canvas.height/2));
     }
   
