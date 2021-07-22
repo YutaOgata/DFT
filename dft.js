@@ -8,7 +8,7 @@ function draw(){
   var canvas = document.querySelector('#canvas1');
   var ctx = canvas.getContext('2d');
     
-  ctx.strokeStyle ='red';
+  ctx.strokeStyle ='blue';
   ctx.lineWidth = 2;
   ctx.beginPath();
   ctx.moveTo(0,250); //始点
@@ -18,11 +18,8 @@ function draw(){
       var y =-r*Math.sin((2*Math.PI/T)*x*2); //振幅 * Math.sin( 角速度(2π/周期)*時間 )
       ctx.lineTo(x, y+(canvas.height/2));
     }
-  ctx.stroke();
-  ctx.strokeStyle = 'black';
   ctx.moveTo(0,0);
   ctx.lineTo(0,500);
-  ctx.stroke();
   ctx.moveTo(0,250);
   ctx.lineTo(600,250);
   ctx.stroke();
