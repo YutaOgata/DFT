@@ -6,35 +6,35 @@ class dft {
     this.result = result;
     this.freq = 1;
     this.sample = 10;
-    
-    var vc1 = this.canvas1.getContext('2d');
+    this.waveform();
+  }
+  waveform() {
+    this.ctx1 = this.canvas1.getContext('2d');
     var r = 100;
     var T = this.canvas1.width;
     var x_pt = [];
-    var y_pt = [];
     var pt = canvas1.width / this.sample;
-    vc1.strokeStyle ='blue';
-    vc1.lineWidth = 2;
-    vc1.beginPath();
-    vc1.moveTo(0,0);
-    vc1.lineTo(0,this.canvas1.height);
-    vc1.moveTo(0,this.canvas1.height/2);
-    vc1.lineTo(this.canvas1.width,this.canvas1.height/2);
+    this.ctx1.strokeStyle ='blue';
+    this.ctx1.lineWidth = 2;
+    this.ctx1.beginPath();
+    this.ctx1.moveTo(0,0);
+    this.ctx1.lineTo(0,this.canvas1.height);
+    this.ctx1.moveTo(0,this.canvas1.height/2);
+    this.ctx1.lineTo(this.canvas1.width,this.canvas1.height/2);
     
-    vc1.moveTo(0,250); //始点
+    this.ctx1.moveTo(0,250); //始点
     for(var x=0; x<this.canvas1.width; x +=1) {
         var y =-r*Math.sin((2*Math.PI/T)*x*this.freq); //振幅 * Math.sin( 角速度(2π/周期)*時間*freq )
-        vc1.lineTo(x, y+(this.canvas1.height/2));
+        this.ctx1.lineTo(x, y+(this.canvas1.height/2));
         if(x % pt == 0 && x != canvas1.width){
           x_pt.push(x);
-          y_pt.push(y);
         }
     }
     for(let i=0; i<this.sample; i++){
-      vc1.moveTo(x_pt[i],0);
-      vc1.lineTo(x_pt[i] ,this.canvas1.height);
+      this.ctx1.moveTo(x_pt[i],0);
+      this.ctx1.lineTo(x_pt[i] ,this.canvas1.height);
     }
-    vc1.stroke();
+    this.ctx1.stroke();
   }
 }
 
