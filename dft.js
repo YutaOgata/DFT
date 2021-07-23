@@ -56,8 +56,7 @@ class dft {
   }
 }
 
-
-window.addEventListener('load',() => {
+var guisetup = () => {
   var nl = new nylon();
   document.querySelector('#s02').addEventListener( 'click', () => {
     nl.emit('max',{"top":10});
@@ -68,6 +67,11 @@ window.addEventListener('load',() => {
   /**document.querySelector('#freq-select').addEventListener( 'change', (event) => {
     nl.emit('freq',{"freq":event.target.value});
   });**/
+}
+
+
+window.addEventListener('load',() => {
+  guisetup();
                                                   
   
   var fui = new dft(
