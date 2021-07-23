@@ -7,12 +7,12 @@ class dft {
     this.freq = 1;
     this.sample = 10;
     this.waveform();
-    /**var nl = new nylon();
-    nl.on( "max", ( key, params ) => {
+    var nl = new nylon();
+    nl.on( 'max', ( key, params ) => {
     this.sample = params["top"];
     this.waveform();
     });
-    nl.on( "freq", ( key, params ) => {
+    /**nl.on( 'freq', ( key, params ) => {
       this.freq = params["freq"]-0;
       this.waveform();
     });**/
@@ -58,15 +58,15 @@ class dft {
 
 
 window.addEventListener('load',() => {
-  /**var nl = new nylon();
+  var nl = new nylon();
   document.querySelector('#s02').addEventListener( 'click', () => {
-    nl.emit("max",{"top":10});
+    nl.emit('max',{"top":10});
   });
   document.querySelector('#s03').addEventListener( 'click', () => {
-    nl.emit("max",{"top":20});
+    nl.emit('max',{"top":20});
   });
-  document.querySelector('#freq-select').addEventListener( 'change', (event) => {
-    nl.emit("freq",{"freq":event.target.value});
+  /**document.querySelector('#freq-select').addEventListener( 'change', (event) => {
+    nl.emit('freq',{"freq":event.target.value});
   });**/
                                                   
   
