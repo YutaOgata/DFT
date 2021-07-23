@@ -10,8 +10,8 @@ class dft {
     var vc1 = this.canvas1.getContext('2d');
     var r = 100;
     var T = this.canvas1.width;
-    var x_pt = new Array(20);
-    var y_pt = new Array(20);
+    var x_pt = [];
+    var y_pt = [];
     var pt = canvas1.width / this.sample;
     vc1.strokeStyle ='blue';
     vc1.lineWidth = 2;
