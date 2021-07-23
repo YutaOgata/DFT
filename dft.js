@@ -7,7 +7,7 @@ class dft {
     this.freq = 1;
     this.sample = 10;
     this.waveform();
-    var nl = new nylon();
+    /**var nl = new nylon();
     nl.on( "max", ( key, params ) => {
     this.sample = params["top"];
     this.waveform();
@@ -15,7 +15,7 @@ class dft {
     nl.on( "freq", ( key, params ) => {
       this.freq = params["freq"]-0;
       this.waveform();
-    });
+    });**/
   }
   
   
@@ -58,7 +58,7 @@ class dft {
 
 
 window.addEventListener('load',() => {
-  var nl = new nylon();
+  /**var nl = new nylon();
   document.querySelector('#s02').addEventListener( 'click', () => {
     nl.emit("max",{"top":10});
   });
@@ -67,7 +67,7 @@ window.addEventListener('load',() => {
   });
   document.querySelector('#freq-select').addEventListener( 'change', (event) => {
     nl.emit("freq",{"freq":event.target.value});
-  });
+  });**/
                                                   
   
   var fui = new dft(
