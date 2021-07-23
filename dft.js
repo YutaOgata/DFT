@@ -24,7 +24,7 @@ class dft {
     var T = this.canvas1.width;
     var x_pt = [];
     var pt = canvas1.width / this.sample;
-    this.ctx1.strokeStyle ='blue';
+    this.ctx1.strokeStyle ='black';
     this.ctx1.lineWidth = 2;
     this.ctx1.beginPath();
     this.ctx1.clearRect(0,0,this.canvas1.width,this.canvas1.height);
@@ -33,7 +33,10 @@ class dft {
     this.ctx1.lineTo(0,this.canvas1.height);
     this.ctx1.moveTo(0,this.canvas1.height/2);
     this.ctx1.lineTo(this.canvas1.width,this.canvas1.height/2);
+    this.ctx1.stroke();
     
+    this.ctx1.strokeStyle ='blue';
+    this.ctx1.beginPath();
     this.ctx1.moveTo(0,250); //始点
     for(var x=0; x<this.canvas1.width; x +=1) {
         var y =-r*Math.sin((2*Math.PI/T)*x*this.freq); //振幅 * Math.sin( 角速度(2π/周期)*時間*freq )
