@@ -66,8 +66,8 @@ class dft {
   });
  document.querySelector('#freq-select').addEventListener( 'change', (event) => {
     nl.emit('freq',{"freq":event.target.value});
-  });**/
-}
+  });
+}**/
 
 
 window.addEventListener('load',() => {
