@@ -7,7 +7,15 @@ class dft {
     this.freq = 1;
     this.sample = 10;
     this.waveform();
+    var nl = new nylon();
   }
+  nl.on( "max", ( key, params ) => {
+      this.number = params["top"];
+    });
+  nl.on( "dimension", ( key, params ) => {
+      this.dimension = params["dimension"];
+    });
+  
   waveform() {
     this.ctx1 = this.canvas1.getContext('2d');
     var r = 100;
@@ -40,6 +48,12 @@ class dft {
 
 
 window.addEventListener('load',() => {
+  document.querySelector('#s02').addEventListener( "click", () => {
+  });
+  document.querySelector('#s03').addEventListener( "click", () => {
+  });
+                                                  
+  
   var fui = new dft(
     document.querySelector('#canvas1'),
     document.querySelector('#canvas2'),
