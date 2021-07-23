@@ -27,6 +27,8 @@ class dft {
     this.ctx1.strokeStyle ='blue';
     this.ctx1.lineWidth = 2;
     this.ctx1.beginPath();
+    this.ctx1.clearRect(0,0,this.canvas1.width,this.canvas1.height);
+    this.ctx1.fill();
     this.ctx1.moveTo(0,0);
     this.ctx1.lineTo(0,this.canvas1.height);
     this.ctx1.moveTo(0,this.canvas1.height/2);
