@@ -64,13 +64,12 @@ class dft {
       for(let ii = 0; ii <= this.result.length; ii++){
         var rows = this.result.deleteRow(0);
       }
-    }
-    let row_sample = [];
-    let cell = [];
-    let 
+    }**/
+    //let row_sample = new Array(this.sample);
+    let cell = new Array(4);
     let row = this.result.insertRow(-1);
     for(let i = 0; i < 4; i++){
-      cell.push(row.insertCell(-1));
+      cell[i] = row.insertCell(-1);
     }
     cell[0].innnerHTML = '次数';
     cell[1].innnerHTML = '実数部';
