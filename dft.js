@@ -66,15 +66,15 @@ class dft {
       }
     }**/
     //let row_sample = new Array(this.sample);
-    let cell = new Array(4);
     let row = this.result.insertRow(-1);
-    for(let i = 0; i < 4; i++){
+    let cell = new Array(4);
+    for (let i = 0; i < 4; i++){
       cell[i] = row.insertCell(-1);
     }
-    cell[0].innnerHTML = '次数';
-    cell[1].innnerHTML = '実数部';
-    cell[2].innnerHTML = '虚数部';
-    cell[3].innnerHTML = '絶対値';**/
+    cell[0].innerHTML = '次数';
+    cell[1].innerHTML = '実数部';
+    cell[2].innerHTML = '虚数部';
+    cell[3].innerHTML = '絶対値';
    
     let f = new Array(this.sample);
     for(let m = 0; m < this.sample; m++) f[m] = Math.sin((2.0*Math.PI/this.sample)*m*this.freq);
