@@ -6,18 +6,22 @@ class dft {
     this.result = result;
     this.freq = 1;
     this.sample = 10;
+    this.on = 0;
     this.dftcal_r();
     this.waveform();
     this.dftcal();
+    
     var nl = new nylon();
     nl.on( 'max', ( key, params ) => {
       this.sample = params["top"];
       this.waveform();
+      this.on = 1;
       this.dftcal();
     });
     nl.on( 'freq', ( key, params ) => {
       this.freq = params["freq"]-0;
       this.waveform();
+      this.on = 1;
       this.dftcal();
     });
   }
@@ -72,6 +76,11 @@ class dft {
   }
   
   dftcal(){
+    if(this.on == 1){
+      for(let i = 1; i< this.result.rows.lengh ;i++){
+        let rows = this.result.deleteRow(1);
+      }
+    }
     let f = new Array(this.sample);
     for(let m = 0; m < this.sample; m++) f[m] = Math.sin((2.0*Math.PI/this.sample)*m*this.freq);
     
