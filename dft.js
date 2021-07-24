@@ -60,11 +60,11 @@ class dft {
   }
   
   dftcal(){
-    /**if(this.count != 0) {
+    if(this.count != 0) {
       for(let ii = 0; ii <= this.result.length; ii++){
         var rows = this.result.deleteRow(0);
       }
-    }**/
+    }
     //let row_sample = new Array(this.sample);
     let row = this.result.insertRow(-1);
     let cell = new Array(4);
@@ -92,8 +92,8 @@ class dft {
       ai /= this.sample;
       k = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
     }
-    //this.count++;
-    //if(this.count == 2) this.count = 1;
+    this.count++;
+    if(this.count == 2) this.count = 1;
   }
 }
 
