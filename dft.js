@@ -91,7 +91,6 @@ class dft {
       ar /= this.sample;
       ai /= this.sample;
       k = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
-      result.innerHTML =Math.round(k * 100) /100;
     }
     //this.count++;
     //if(this.count == 2) this.count = 1;
