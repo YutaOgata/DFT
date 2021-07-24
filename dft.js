@@ -58,7 +58,7 @@ class dft {
   }
   
   dftcal(){
-    if(this.count != 0) {
+    /**if(this.count != 0) {
       for(let ii = 0; ii <= this.result.length; ii++){
         var rows = this.result.deleteRow(0);
       }
@@ -73,7 +73,7 @@ class dft {
     cell[0].innnerHTML = '次数';
     cell[1].innnerHTML = '実数部';
     cell[2].innnerHTML = '虚数部';
-    cell[3].innnerHTML = '絶対値';
+    cell[3].innnerHTML = '絶対値';**/
    
     let f =[];
     for(let m = 0; m < this.sample; m++) f.push(Math.sin((2*Math.PI/this.sample)*m*this.freq));
@@ -90,9 +90,10 @@ class dft {
       ar /= this.sample;
       ai /= this.sample;
       x = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
+      result.innerHTML = x;
     }
-    this.count++;
-    if(this.count == 2) this.count = 1;
+    //this.count++;
+    //if(this.count == 2) this.count = 1;
   }
 }
 
