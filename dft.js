@@ -6,7 +6,7 @@ class dft {
     this.result = result;
     this.freq = 1;
     this.sample = 10;
-    this.count = 0;
+    this.dftcal_r();
     this.waveform();
     this.dftcal();
     var nl = new nylon();
@@ -59,13 +59,7 @@ class dft {
     this.ctx1.stroke();
   }
   
-  dftcal(){
-    if(this.count != 0) {
-      for(let ii = 0; ii <= this.result.length; ii++){
-        var rows = this.result.deleteRow(0);
-      }
-    }
-    //let row_sample = new Array(this.sample);
+  dftcal_r(){
     let row = this.result.insertRow(-1);
     let cell = new Array(4);
     for (let i = 0; i < 4; i++){
@@ -75,7 +69,9 @@ class dft {
     cell[1].innerHTML = '実数部';
     cell[2].innerHTML = '虚数部';
     cell[3].innerHTML = '絶対値';
-   
+  }
+  
+  dftcal(){
     let f = new Array(this.sample);
     for(let m = 0; m < this.sample; m++) f[m] = Math.sin((2.0*Math.PI/this.sample)*m*this.freq);
     
@@ -88,12 +84,19 @@ class dft {
         ar += f[m] * Math.cos(-k);
         ai += f[m] * Math.sin(-k);
       }
+      let row_s = this.result.insertRow(-1);
+      let cell_ar = row_s.insertCell(-1);
+      let cell_ai = row_s.insertCell(-1);
+      let cell_k = row_s.insertCell(-1);
+      
       ar /= this.sample;
       ai /= this.sample;
       k = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
+      
+      cell_ar.innerHTML = ar;
+      cell_ai.innerHTML = ai;
+      cell_k.innerHTML = k;
     }
-    this.count++;
-    if(this.count == 2) this.count = 1;
   }
 }
 
