@@ -77,8 +77,8 @@ class dft {
     cell[2].innnerHTML = '虚数部';
     cell[3].innnerHTML = '絶対値';**/
    
-    let f =[];
-    for(let m = 0; m < this.sample; m++) f.push(Math.sin((2.0*Math.PI/this.sample)*m*this.freq));
+    let f = new Array(this.sample);
+    for(let m = 0; m < this.sample; m++) f[m] = Math.sin((2.0*Math.PI/this.sample)*m*this.freq);
     
     for (let n = 0; n < this.sample; n++) {
       let ar = 0.0;
