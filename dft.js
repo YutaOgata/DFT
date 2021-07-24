@@ -11,12 +11,14 @@ class dft {
     this.dftcal();
     var nl = new nylon();
     nl.on( 'max', ( key, params ) => {
-    this.sample = params["top"];
-    this.waveform();
+      this.sample = params["top"];
+      this.waveform();
+      this.dftcal();
     });
     nl.on( 'freq', ( key, params ) => {
       this.freq = params["freq"]-0;
       this.waveform();
+      this.dftcal();
     });
   }
   
