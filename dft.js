@@ -78,21 +78,21 @@ class dft {
     cell[3].innnerHTML = '絶対値';**/
    
     let f =[];
-    for(let m = 0; m < this.sample; m++) f.push(Math.sin((2*Math.PI/this.sample)*m*this.freq));
+    for(let m = 0; m < this.sample; m++) f.push(Math.sin((2.0*Math.PI/this.sample)*m*this.freq));
     
     for (let n = 0; n < this.sample; n++) {
       let ar = 0.0;
       let ai = 0.0;
-      let x;
+      let k;
       for (let m = 0; m < this.sample; m++) {
-        x = ((2.0 * Math.PI) / this.sample) * m * n;
-        ar += f[m] * Math.cos(-x);
-        ai += f[m] * Math.sin(-x);
+        k = ((2.0 * Math.PI) / this.sample) * m * n;
+        ar += f[m] * Math.cos(-k);
+        ai += f[m] * Math.sin(-k);
       }
       ar /= this.sample;
       ai /= this.sample;
-      x = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
-      result.innerHTML = x;
+      k = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
+      result.innerHTML =Math.round(k * 100) /100;
     }
     //this.count++;
     //if(this.count == 2) this.count = 1;
