@@ -85,6 +85,7 @@ class dft {
         ai += f[m] * Math.sin(-k);
       }
       let row_s = this.result.insertRow(-1);
+      let cell_n = row_s.insertCell(-1);
       let cell_ar = row_s.insertCell(-1);
       let cell_ai = row_s.insertCell(-1);
       let cell_k = row_s.insertCell(-1);
@@ -93,9 +94,10 @@ class dft {
       ai /= this.sample;
       k = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
       
-      cell_ar.innerHTML = ar;
-      cell_ai.innerHTML = ai;
-      cell_k.innerHTML = k;
+      cell_n.innerHTML = n;
+      cell_ar.innerHTML = Math.round(ar*100)/100;
+      cell_ai.innerHTML = Math.round(ai*100)/100;
+      cell_k.innerHTML = Math.round(k*100)/100;
     }
   }
 }
