@@ -6,7 +6,9 @@ class dft {
     this.result = result;
     this.freq = 1;
     this.sample = 10;
+    this.count = 0;
     this.waveform();
+    this.dftcal();
     var nl = new nylon();
     nl.on( 'max', ( key, params ) => {
     this.sample = params["top"];
@@ -41,7 +43,7 @@ class dft {
     this.ctx1.strokeStyle ='blue';
     this.ctx1.beginPath();
     this.ctx1.moveTo(0,250); //始点
-    for(var x=0; x<this.canvas1.width; x +=1) {
+    for(let x=0; x<this.canvas1.width; x +=1) {
         var y =-r*Math.sin((2*Math.PI/T)*x*this.freq); //振幅 * Math.sin( 角速度(2π/周期)*時間*freq )
         this.ctx1.lineTo(x, y+(this.canvas1.height/2));
         if(x % pt == 0 && x != canvas1.width){
@@ -53,6 +55,44 @@ class dft {
       this.ctx1.lineTo(x_pt[i] ,this.canvas1.height);
     }
     this.ctx1.stroke();
+  }
+  
+  dftcal(){
+    if(this.count != 0) {
+      for(let ii = 0; ii <= this.result.length; ii++){
+        var rows = this.result.deleteRow(0);
+      }
+    }
+    let row_sample = [];
+    let cell = [];
+    let 
+    let row = this.result.insertRow(-1);
+    for(let i = 0; i < 4; i++){
+      cell.push(row.insertCell(-1));
+    }
+    cell[0].innnerHTML = '次数';
+    cell[1].innnerHTML = '実数部';
+    cell[2].innnerHTML = '虚数部';
+    cell[3].innnerHTML = '絶対値';
+   
+    let f =[];
+    for(let m = 0; m < this.sample; m++) f.push(Math.sin((2*Math.PI/this.sample)*m*this.freq));
+    
+    for (let n = 0; n < this.sample; n++) {
+      let ar = 0.0;
+      let ai = 0.0;
+      let x;
+      for (let m = 0; m < this.sample; m++) {
+        x = ((2.0 * Math.PI) / this.sample) * m * n;
+        ar += f[m] * Math.cos(-x);
+        ai += f[m] * Math.sin(-x);
+      }
+      ar /= this.sample;
+      ai /= this.sample;
+      x = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
+    }
+    this.count++;
+    if(this.count == 2) this.count = 1;
   }
 }
 
