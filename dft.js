@@ -78,7 +78,7 @@ class dft {
   dftcal(){
     //if(this.on == 1){
       //for(let i = 1; i< this.result.rows.lengh ;i++){
-        let rows = this.result.deleteRow();
+        let rows = this.result.deleteRow(0);
       //}
     //}
     let f = new Array(this.sample);
