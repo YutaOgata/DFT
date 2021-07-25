@@ -85,7 +85,8 @@ class dft {
       }
     }
     let f = new Array(this.sample);
-    for(let m = 0; m < this.sample; m++) f[m] = Math.sin((2.0*Math.PI/this.sample)*m*this.freq);
+    var g = new Array(this.sample);
+    for(let n = 0; n < this.sample; n++) f[n] = Math.sin((2.0*Math.PI/this.sample)*n*this.freq);
     
     for (let n = 0; n < this.sample; n++) {
       let ar = 0.0;
@@ -105,6 +106,7 @@ class dft {
       ar /= this.sample;
       ai /= this.sample;
       k = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
+      g[n] = Math.round(k*100)/100;
       
       cell_n.innerHTML = n;
       cell_ar.innerHTML = Math.round(ar*100)/100;
@@ -112,7 +114,6 @@ class dft {
       cell_k.innerHTML = Math.round(k*100)/100;
     }
   }
-}
 
  var guisetup = () => {
   var nl = new nylon();
