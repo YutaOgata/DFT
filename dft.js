@@ -79,6 +79,21 @@ class dft {
   }
   
   dftcal(){
+    this.ctx2 = this.canvas2.getContext('2d');
+    this.ctx2.beginPath();
+    this.ctx2.clearRect(0,0,this.canvas2.width,this.canvas2.height);
+    this.ctx2.fill();
+    this.ctx2.stroke();
+    this.ctx2.strokeStyle ='black';
+    this.ctx2.beginPath();
+    this.ctx2.moveTo(0,0);
+    this.ctx2.lineTo(0,this.canvas1.height);
+    this.ctx2.moveTo(0,this.canvas1.height);
+    this.ctx2.lineTo(this.canvas1.width,this.canvas1.height);
+    this.ctx2.stroke();
+    
+    this.ctx2.strokeStyle ='blue';
+    this.ctx2.beginPath();
     if(this.on == 1){
       for(let i = 1; i<= this.memory ;i++){
         let rows = this.result.deleteRow(-1);
@@ -106,7 +121,9 @@ class dft {
       ar /= this.sample;
       ai /= this.sample;
       x = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
-      g[n] = Math.round(x*100)/100;
+      this.ctx2.moveTo((this.ctx2.width / this.sample) * n,this.ctx2.height * x);
+      this.ctx2.lineTo(((this.ctx2.width / this.sample) * n)+1,(this.ctx2.height * x)+1);
+      this.ctx2.stroke();
       
       cell_n.innerHTML = n;
       cell_ar.innerHTML = Math.round(ar*100)/100;
