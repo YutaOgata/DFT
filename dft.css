@@ -24,6 +24,10 @@ body {
   position: relative;
 
 }
+.memory{
+  left:45px;
+  top: 550px;
+}
 
 #area1 {
     background-color: #ffff00;
