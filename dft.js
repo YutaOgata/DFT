@@ -88,30 +88,30 @@ class dft {
     var g = new Array(this.sample);
     for(let n = 0; n < this.sample; n++) f[n] = Math.sin((2.0*Math.PI/this.sample)*n*this.freq);
     
-    for (let n = 0; n < this.sample; n++) {
+    for (let m = 0; m < this.sample; n++) {
       let ar = 0.0;
       let ai = 0.0;
-      let k;
-      for (let m = 0; m < this.sample; m++) {
-        k = ((2.0 * Math.PI) / this.sample) * m * n;
-        ar += f[m] * Math.cos(-k);
-        ai += f[m] * Math.sin(-k);
+      let x;
+      for (let n = 0; n < this.sample; n++) {
+        x = ((2.0 * Math.PI) / this.sample) * m * n;
+        ar += f[n] * Math.cos(-x);
+        ai += f[n] * Math.sin(-x);
       }
       let row_s = this.result.insertRow(-1);
       let cell_n = row_s.insertCell(-1);
       let cell_ar = row_s.insertCell(-1);
       let cell_ai = row_s.insertCell(-1);
-      let cell_k = row_s.insertCell(-1);
+      let cell_x = row_s.insertCell(-1);
       
       ar /= this.sample;
       ai /= this.sample;
-      k = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
-      g[n] = Math.round(k*100)/100;
+      x = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
+      g[n] = Math.round(x*100)/100;
       
       cell_n.innerHTML = n;
       cell_ar.innerHTML = Math.round(ar*100)/100;
       cell_ai.innerHTML = Math.round(ai*100)/100;
-      cell_k.innerHTML = Math.round(k*100)/100;
+      cell_x.innerHTML = Math.round(x*100)/100;
     }
   }
 
