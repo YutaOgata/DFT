@@ -94,7 +94,7 @@ class dft {
     this.ctx2.lineTo(this.canvas2.width,this.canvas2.height);
     this.ctx2.stroke();
     
-    this.ctx2.strokeStyle ='blue';*//
+    this.ctx2.strokeStyle ='blue';**/
     
     if(this.on == 1){
       for(let i = 1; i<= this.memory ;i++){
