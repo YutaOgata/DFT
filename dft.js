@@ -79,7 +79,7 @@ class dft {
   }
   
   dftcal(){
-    this.ctx2 = this.canvas2.getContext('2d');
+    /**this.ctx2 = this.canvas2.getContext('2d');
     this.ctx2.strokeStyle ='black';
     this.ctx2.lineWidth = 2;
     this.ctx2.beginPath();
@@ -94,7 +94,7 @@ class dft {
     this.ctx2.lineTo(this.canvas2.width,this.canvas2.height);
     this.ctx2.stroke();
     
-    this.ctx2.strokeStyle ='blue';
+    this.ctx2.strokeStyle ='blue';**/
     
     if(this.on == 1){
       for(let i = 1; i<= this.memory ;i++){
@@ -159,38 +159,3 @@ window.addEventListener('load',() => {
     document.querySelector('#result'),
   );
 });
-
-
-
-
-/**window.addEventListener('load',draw,false);
-
-function draw(){
-  var r = 100;
-  var T = 600;
-  var x_pt = new Array(20);
-  var y_pt = new Array(20);
-  
-  var canvas = document.querySelector('#canvas1');
-  var ctx = canvas.getContext('2d');
-    
-  ctx.strokeStyle ='blue';
-  ctx.lineWidth = 2;
-  ctx.beginPath();
-  ctx.moveTo(0,250); //始点
-  
- 
-  for(var x=1; x<=canvas.width; x +=1) {
-      var y =-r*Math.sin((2*Math.PI/T)*x*2); //振幅 * Math.sin( 角速度(2π/周期)*時間 )
-      ctx.lineTo(x, y+(canvas.height/2));
-      
-    }
-  ctx.moveTo(0,0);
-  ctx.lineTo(0,500);
-  ctx.moveTo(0,250);
-  ctx.lineTo(600,250);
-  
-  ctx.stroke();
-  
-}**/
-
