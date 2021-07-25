@@ -134,7 +134,7 @@ class dft {
       cell_x.innerHTML = Math.round(x*100)/100;
     }
   }
-
+}
  var guisetup = () => {
   var nl = new nylon();
   document.querySelector('#s02').addEventListener( 'click', () => {
