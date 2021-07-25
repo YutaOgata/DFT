@@ -14,7 +14,7 @@ body {
 .myCanvas {
   position: absolute;
   margin: 0;
-  padding: 50px;
+  padding: 45px;
   left: 0;
   top: 0;
 }
@@ -31,11 +31,11 @@ body {
 
 #area1 {
     background-color: #ffff00;
-    width: 650px;
-    height: 550px;
+    width: 645px;
+    height: 545px;
 }
 #area2 {
     background-color: #ff6347;
-    width: 650px;
-    height: 350px;
+    width: 645px;
+    height: 345px;
 }
