@@ -51,9 +51,9 @@ class dft {
     
     this.ctx1.strokeStyle ='blue';
     this.ctx1.beginPath();
-    this.ctx1.moveTo(0,250); //始点
+    this.ctx1.moveTo(0,canvas1.height/2); 
     for(let x=0; x<this.canvas1.width; x +=1) {
-        var y =-r*Math.sin((2*Math.PI/T)*x*this.freq); //振幅 * Math.sin( 角速度(2π/周期)*時間*freq )
+        var y =-r*Math.sin((2*Math.PI/T)*x*this.freq); 
         this.ctx1.lineTo(x, y+(this.canvas1.height/2));
         if(x % pt == 0 && x != canvas1.width){
           x_pt.push(x);
