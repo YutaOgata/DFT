@@ -128,7 +128,7 @@ class dft {
       //this.ctx2.lineTo(((this.canvas2.width / this.sample) * n)+1,(this.canvas2.height * x)+1);
       //this.ctx2.stroke();
       
-      cell_n.innerHTML = n;
+      cell_n.innerHTML = m;
       cell_ar.innerHTML = Math.round(ar*100)/100;
       cell_ai.innerHTML = Math.round(ai*100)/100;
       cell_x.innerHTML = Math.round(x*100)/100;
