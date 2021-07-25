@@ -124,7 +124,7 @@ class dft {
       ai /= this.sample;
       x = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
       
-     if(x != 0) this.ctx2.fillRect((this.canvas2.width / this.sample) * m,this.canvas2.height - (this.canvas2.height * (Math.round(x*100)/100)),10,(this.canvas2.height * (Math.round(x*100)/100));
+     if(Math.round(x*100)/100 != 0) this.ctx2.fillRect((this.canvas2.width / this.sample) * m,this.canvas2.height - (this.canvas2.height * (Math.round(x*100)/100)),10,(this.canvas2.height * (Math.round(x*100)/100));
       
       
       cell_n.innerHTML = m;
