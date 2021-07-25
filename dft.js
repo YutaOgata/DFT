@@ -80,7 +80,7 @@ class dft {
   dftcal(){
     if(this.on == 1){
       for(let i = 1; i<= this.memory ;i++){
-        let rows = this.result.deleteRow();
+        let rows = this.result.deleteRow(-1);
       }
     }
     let f = new Array(this.sample);
