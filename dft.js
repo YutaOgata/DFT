@@ -122,7 +122,7 @@ class dft {
       ar /= this.sample;
       ai /= this.sample;
       x = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
-      this.ctx2.moveTo((this.canvas2.width / this.sample) * n,this.canvas2.height * x);
+      this.ctx2.moveTo((this.canvas2.width / this.sample) * n,this.canvas2.height * (Math.round(x*100)/100));
       this.ctx2.lineTo(((this.canvas2.width / this.sample) * n)+1,(this.canvas2.height * x)+1);
       this.ctx2.stroke();
       
