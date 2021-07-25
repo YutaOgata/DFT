@@ -77,9 +77,9 @@ class dft {
   
   dftcal(){
     if(this.on == 1){
-      //for(let i = 1; i< this.result.rows.lengh ;i++){
+      for(let i = 1; i< this.result.rows.length ;i++){
         let rows = this.result.deleteRow(0);
-      //}
+      }
     }
     let f = new Array(this.sample);
     for(let m = 0; m < this.sample; m++) f[m] = Math.sin((2.0*Math.PI/this.sample)*m*this.freq);
