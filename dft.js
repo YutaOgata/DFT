@@ -86,7 +86,6 @@ class dft {
     this.ctx2.clearRect(0,0,this.canvas2.width,this.canvas2.height);
     this.ctx2.fill();
     this.ctx2.stroke();
-    this.ctx2.strokeStyle ='black';
     this.ctx2.beginPath();
     this.ctx2.moveTo(0,0);
     this.ctx2.lineTo(0,this.canvas2.height);
@@ -124,8 +123,8 @@ class dft {
       ar /= this.sample;
       ai /= this.sample;
       x = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
-      this.ctx2.moveTo((this.canvas2.width / this.sample) * m,this.canvas2.height - (this.canvas2.height * (Math.round(x*100)/100)));
-      this.ctx2.lineTo(((this.canvas2.width / this.sample) * m)+1,this.canvas2.height - ((this.canvas2.height * x)+1));
+      
+     if(x != 0) this.ctx2.fillRect((this.canvas2.width / this.sample) * m,this.canvas2.height - (this.canvas2.height * (Math.round(x*100)/100)),10,(this.canvas2.height * (Math.round(x*100)/100));
       
       
       cell_n.innerHTML = m;
