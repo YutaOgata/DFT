@@ -7,12 +7,14 @@ class dft {
     this.freq = 1;
     this.sample = 10;
     this.on = 0;
+    this.memory = this.sample;
     this.dftcal_r();
     this.waveform();
     this.dftcal();
     
     var nl = new nylon();
     nl.on( 'max', ( key, params ) => {
+      this.memory = this.sample;
       this.sample = params["top"];
       this.waveform();
       this.on = 1;
@@ -77,8 +79,8 @@ class dft {
   
   dftcal(){
     if(this.on == 1){
-      for(let i = 1; i< this.result.rows.length ;i++){
-        let rows = this.result.deleteRow(0);
+      for(let i = 1; i<= this.memory ;i++){
+        let rows = this.result.deleteRow();
       }
     }
     let f = new Array(this.sample);
