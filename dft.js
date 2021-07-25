@@ -94,7 +94,7 @@ class dft {
     this.ctx2.lineTo(this.canvas2.width,this.canvas2.height);
     this.ctx2.stroke();
     
-    //this.ctx2.strokeStyle ='blue';
+    this.ctx2.strokeStyle ='blue';
     
     if(this.on == 1){
       for(let i = 1; i<= this.memory ;i++){
@@ -124,8 +124,8 @@ class dft {
       ar /= this.sample;
       ai /= this.sample;
       x = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
-      //this.ctx2.moveTo((this.canvas2.width / this.sample) * n,this.canvas2.height - (this.canvas2.height * (Math.round(x*100)/100)));
-      //this.ctx2.lineTo(((this.canvas2.width / this.sample) * n)+1,this.canvas2.height - ((this.canvas2.height * x)+1));
+      this.ctx2.moveTo((this.canvas2.width / this.sample) * m,this.canvas2.height - (this.canvas2.height * (Math.round(x*100)/100)));
+      this.ctx2.lineTo(((this.canvas2.width / this.sample) * m)+1,this.canvas2.height - ((this.canvas2.height * x)+1));
       
       
       cell_n.innerHTML = m;
@@ -133,7 +133,7 @@ class dft {
       cell_ai.innerHTML = Math.round(ai*100)/100;
       cell_x.innerHTML = Math.round(x*100)/100;
     }
-    //this.ctx2.stroke();
+    this.ctx2.stroke();
   }
 }
  var guisetup = () => {
