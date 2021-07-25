@@ -35,7 +35,7 @@ class dft {
     var r = 100;
     var T = this.canvas1.width;
     var x_pt = [];
-    var pt = canvas1.width / this.sample;
+    var pt = this.canvas1.width / this.sample;
     this.ctx1.strokeStyle ='black';
     this.ctx1.lineWidth = 2;
     this.ctx1.beginPath();
@@ -51,11 +51,11 @@ class dft {
     
     this.ctx1.strokeStyle ='blue';
     this.ctx1.beginPath();
-    this.ctx1.moveTo(0,canvas1.height/2); 
+    this.ctx1.moveTo(0,this.canvas1.height/2); 
     for(let x=0; x<this.canvas1.width; x +=1) {
         var y =-r*Math.sin((2*Math.PI/T)*x*this.freq); 
         this.ctx1.lineTo(x, y+(this.canvas1.height/2));
-        if(x % pt == 0 && x != canvas1.width){
+        if(x % pt == 0 && x != this.canvas1.width){
           x_pt.push(x);
         }
     }
