@@ -81,7 +81,7 @@ class dft {
   dftcal(){
     this.ctx2 = this.canvas2.getContext('2d');
     this.ctx2.strokeStyle ='black';
-    this.ctx2.lineWidth = 2;
+    this.ctx2.lineWidth = 10;
     this.ctx2.beginPath();
     this.ctx2.clearRect(0,0,this.canvas2.width,this.canvas2.height);
     this.ctx2.fill();
