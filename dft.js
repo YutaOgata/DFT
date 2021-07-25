@@ -93,7 +93,7 @@ class dft {
     this.ctx2.stroke();
     
     this.ctx2.strokeStyle ='blue';
-    this.ctx2.beginPath();
+    
     if(this.on == 1){
       for(let i = 1; i<= this.memory ;i++){
         let rows = this.result.deleteRow(-1);
@@ -107,6 +107,7 @@ class dft {
       let ar = 0.0;
       let ai = 0.0;
       let x;
+      this.ctx2.beginPath();
       for (let n = 0; n < this.sample; n++) {
         x = ((2.0 * Math.PI) / this.sample) * m * n;
         ar += f[n] * Math.cos(-x);
