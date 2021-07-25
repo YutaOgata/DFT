@@ -107,7 +107,7 @@ class dft {
       let ar = 0.0;
       let ai = 0.0;
       let x;
-      this.ctx2.beginPath();
+      //this.ctx2.beginPath();
       for (let n = 0; n < this.sample; n++) {
         x = ((2.0 * Math.PI) / this.sample) * m * n;
         ar += f[n] * Math.cos(-x);
@@ -122,9 +122,9 @@ class dft {
       ar /= this.sample;
       ai /= this.sample;
       x = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
-      this.ctx2.moveTo((this.canvas2.width / this.sample) * n,this.canvas2.height * (Math.round(x*100)/100));
-      this.ctx2.lineTo(((this.canvas2.width / this.sample) * n)+1,(this.canvas2.height * x)+1);
-      this.ctx2.stroke();
+      //this.ctx2.moveTo((this.canvas2.width / this.sample) * n,this.canvas2.height * (Math.round(x*100)/100));
+      //this.ctx2.lineTo(((this.canvas2.width / this.sample) * n)+1,(this.canvas2.height * x)+1);
+      //this.ctx2.stroke();
       
       cell_n.innerHTML = n;
       cell_ar.innerHTML = Math.round(ar*100)/100;
