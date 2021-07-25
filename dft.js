@@ -93,7 +93,7 @@ class dft {
     this.ctx2.lineTo(this.canvas2.width,this.canvas2.height);
     this.ctx2.stroke();
     
-    //this.ctx2.strokeStyle ='blue';
+    this.ctx2.fillStyle ='blue';
     
     if(this.on == 1){
       for(let i = 1; i<= this.memory ;i++){
@@ -108,7 +108,6 @@ class dft {
       let ar = 0.0;
       let ai = 0.0;
       let x;
-      //this.ctx2.beginPath();
       for (let n = 0; n < this.sample; n++) {
         x = ((2.0 * Math.PI) / this.sample) * m * n;
         ar += f[n] * Math.cos(-x);
@@ -124,7 +123,7 @@ class dft {
       ai /= this.sample;
       x = Math.sqrt(4.0 * ar * ar + 4.0 * ai * ai);
       
-     //if(Math.round(x*100)/100 != 0) this.ctx2.fillRect((this.canvas2.width / this.sample) * m,this.canvas2.height - (this.canvas2.height * (Math.round(x*100)/100)),10,(this.canvas2.height * (Math.round(x*100)/100));
+     if(Math.round(x*100)/100 != 0) this.ctx2.fillRect((this.canvas2.width / this.sample) * m,this.canvas2.height - (this.canvas2.height * (Math.round(x*100)/100)),10,this.canvas2.height);
       
       
       cell_n.innerHTML = m;
@@ -132,7 +131,6 @@ class dft {
       cell_ai.innerHTML = Math.round(ai*100)/100;
       cell_x.innerHTML = Math.round(x*100)/100;
     }
-    //this.ctx2.stroke();
   }
 }
  var guisetup = () => {
