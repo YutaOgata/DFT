@@ -27,28 +27,11 @@ body {
 
 #area1 {
     background-color: #ffff00;
-    width: 600px;
-    height: 500px;
+    width: 700px;
+    height: 600px;
 }
 #area2 {
     background-color: #ff6347;
-    width: 600px;
-    height: 300px;
-}
-
-#header {
-  width: 640px;
-}
-.normal {
-  width: 80px;
-  height: 60px;
-  font-size: 16pt;
-}
-.clear {
-  font-size: 14pt;
-  width: 160px;
-  height: 30px;
-}
-#initial {
-  background-color: #b0f0b0;
+    width: 700px;
+    height: 400px;
 }
