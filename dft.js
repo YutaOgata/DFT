@@ -21,6 +21,7 @@ class dft {
       this.dftcal();
     });
     nl.on( 'freq', ( key, params ) => {
+      this.memory = this.sample;
       this.freq = params["freq"]-0;
       this.waveform();
       this.on = 1;
